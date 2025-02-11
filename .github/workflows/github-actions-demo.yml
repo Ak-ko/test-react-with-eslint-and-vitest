@@ -1,0 +1,15 @@
+name: Action Demo
+run-name: ${{ github.actor }} is testing on GitHub Action 💣
+on: [push]
+jobs:
+    Explore-GitHub-Actions:
+        runs-on: ubuntu-latest
+        steps:
+            - run: echo "What the fuck is this...."
+            - run: echo "Oh yeah, it is an action that is the event ${{ github.event_name }}."
+            - run: echo "Fucking dude, it is running on this repo ${{ github.repository }}."
+            - run: echo "🖥️ The workflow is now ready to test your code on the runner."
+            - name: List files in the repository
+              run: |
+                  ls ${{ github.workspace }}
+            - run: echo "🍏 This job's status is ${{ job.status }}."
